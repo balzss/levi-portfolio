@@ -51,6 +51,9 @@ section a {
 }
 
 header {
+  background-image: url("kepek/header.png");
+  background-repeat: no-repeat;
+  background-size: contain;
   display: flex;
   padding: 32px;
   background-color: #aaa;
@@ -149,6 +152,7 @@ main > section img {
 
 @media screen and (max-width: 767px) {
   header {
+    background-image: none;
     padding: 32px 16px;
     padding-bottom: 64px;
     height: auto;
