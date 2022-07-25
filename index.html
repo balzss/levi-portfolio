@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Sáros Levente | 3D látványtervezés</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="photoswipe/dist/photoswipe.css">
+</head>
+<body>
+  <header>
+    <img src="/kepek/alaprajz.png" alt="">
+  </header>
+
+  <aside>
+    <div class="profile">
+      <div class="profile-img">
+        <img src="/kepek/profilkep.png" alt="">
+      </div>
+      <h1>Sáros Levente</h1>
+      <h2>3D látványtervező</h2>
+      <div class="location">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M11.536 3.464a5 5 0 010 7.072L8 14.07l-3.536-3.535a5 5 0 117.072-7.072v.001zm1.06 8.132a6.5 6.5 0 10-9.192 0l3.535 3.536a1.5 1.5 0 002.122 0l3.535-3.536zM8 9a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+        Budapest
+      </div>
+    </div>
+    <ul class="contact-info">
+      <li>
+        <a href="mailto:leventesaros@gmail.com">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.75 2A1.75 1.75 0 000 3.75v.736a.75.75 0 000 .027v7.737C0 13.216.784 14 1.75 14h12.5A1.75 1.75 0 0016 12.25v-8.5A1.75 1.75 0 0014.25 2H1.75zM14.5 4.07v-.32a.25.25 0 00-.25-.25H1.75a.25.25 0 00-.25.25v.32L8 7.88l6.5-3.81zm-13 1.74v6.441c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V5.809L8.38 9.397a.75.75 0 01-.76 0L1.5 5.809z"></path></svg>
+          leventesaros@gmail.com
+        </a>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M3.75 0A1.75 1.75 0 002 1.75v12.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 14.25V1.75A1.75 1.75 0 0012.25 0h-8.5zM3.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v12.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25V1.75zM8 13a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+        +36 30 921 8543
+      </li>
+    </ul>
+  </aside>
+
+  <main id="gallery">
+    <section>
+      <a
+        href="/kepek/classic_modern/render1.jpg"
+        data-pswp-width="1500"
+        data-pswp-height="1080"
+        target="_blank"
+      >
+        <img src="/kepek/classic_modern/render1.jpg" alt="">
+      </a>
+    </section>
+    <section>
+      <a
+        href="/kepek/csigalepcsos/render1.jpg"
+        data-pswp-width="1500"
+        data-pswp-height="1080"
+        target="_blank"
+      >
+        <img src="/kepek/csigalepcsos/render1.jpg" alt="">
+      </a>
+    </section>
+    <section>
+      <a
+        href="/kepek/furdo/render1.jpg"
+        data-pswp-width="1500"
+        data-pswp-height="1080"
+        target="_blank"
+      >
+        <img src="/kepek/furdo/render1.jpg" alt="">
+      </a>
+    </section>
+    <section>
+      <a
+        href="/kepek/galerias_lakas/render1.jpg"
+        data-pswp-width="1500"
+        data-pswp-height="1080"
+        target="_blank"
+      >
+        <img src="/kepek/galerias_lakas/render1.jpg" alt="">
+      </a>
+    </section>
+    <section>
+      <a
+        href="/kepek/halo_alaprajz/render1.jpg"
+        data-pswp-width="1500"
+        data-pswp-height="1080"
+        target="_blank"
+      >
+        <img src="/kepek/halo_alaprajz/render1.jpg" alt="">
+      </a>
+    </section>
+    <section>
+      <a
+        href="/kepek/japan_foldszintes/render1.jpg"
+        data-pswp-width="1500"
+        data-pswp-height="1080"
+        target="_blank"
+      >
+        <img src="/kepek/japan_foldszintes/render1.jpg" alt="">
+      </a>
+    </section>
+    <section>
+      <a
+        href="/kepek/sarga_budai/render1.jpg"
+        data-pswp-width="1500"
+        data-pswp-height="1080"
+        target="_blank"
+      >
+        <img src="/kepek/sarga_budai/render1.jpg" alt="">
+      </a>
+    </section>
+  </main>
+
+  <script type="module">
+    import PhotoSwipeLightbox from '/photoswipe/dist/photoswipe-lightbox.esm.js';
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#gallery',
+      children: 'a',
+      pswpModule: () => import('/photoswipe/dist/photoswipe.esm.js')
+    });
+    lightbox.init();
+  </script>
+</body>
+</html>

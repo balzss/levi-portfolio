@@ -1,0 +1,177 @@
+@font-face {
+  font-family: 'Lato Light';
+  src:  url('fonts/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato Thin';
+  src:  url('fonts/Lato-Thin.ttf') format('truetype');
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  background-color: #313131;
+  color: #f0f0f0;
+  margin: 0;
+  font-weight: 100;
+  font-size: 16px;
+  font-family: 'Lato Thin', sans-serif;
+  line-height: 1.5;
+}
+
+h1, h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+section {
+  all: unset;
+  display: flex;
+}
+
+section a {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+}
+
+header {
+  height: 240px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 32px;
+  padding-right: 10%;
+  background-color: #aaa;
+}
+
+header img {
+  height: 100%;
+  width: auto;
+}
+
+aside {
+  border-radius: 4px;
+  background-color: #444;
+  position: absolute;
+  width: 260px;
+  left: 32px;
+  top: 72px;
+  height: 500px;
+  padding: 32px;
+}
+
+aside .profile {
+  margin: 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+aside .profile-img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 32px;
+}
+
+aside .profile-img img {
+  width: 100%;
+}
+
+aside .location,
+aside li a,
+aside .contact-info li {
+  display: flex;
+  align-items: center;
+}
+
+aside svg {
+  fill: #f0f0f0;
+  transform: scale(0.85);
+  margin-right: 4px;
+}
+
+aside h1 {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Lato Light', sans-serif;
+  text-transform: uppercase;
+}
+
+aside ul {
+  all: unset;
+}
+
+aside ul li {
+  all: unset;
+  display: flex;
+}
+
+main {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-left: calc(260px + 32px);
+  padding: 32px;
+}
+
+main > section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 767px) {
+  header {
+    padding: 32px 16px;
+    padding-bottom: 64px;
+    height: auto;
+  }
+
+  header img {
+    width: 100%;
+    height: auto;
+    align-self: center;
+  }
+
+  aside {
+    position: relative;
+    margin-top: -64px;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    background-color: transparent;
+    padding: 16px;
+  }
+
+  aside .profile {
+    margin: 16px 0;
+    padding: 0;
+  }
+
+  aside .profile-img {
+    margin-bottom: 16px;
+  }
+
+  main {
+    margin: 0;
+    padding: 16px;
+    gap: 16px;
+  }
+}
+
