@@ -51,17 +51,23 @@ section a {
 }
 
 header {
-  height: 240px;
   display: flex;
-  justify-content: flex-end;
   padding: 32px;
-  padding-right: 10%;
   background-color: #aaa;
+  max-height: 320px;
 }
 
 header img {
+  width: calc(100% - 240px);
   height: 100%;
-  width: auto;
+  max-width: 900px;
+}
+
+header .img-container {
+  max-width: 1824px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 aside {
@@ -99,6 +105,11 @@ aside .contact-info li {
   align-items: center;
 }
 
+aside li a,
+aside .contact-info li {
+  margin: 3px 0;
+}
+
 aside svg {
   fill: #f0f0f0;
   transform: scale(0.85);
@@ -127,6 +138,7 @@ main {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin-left: calc(260px + 32px);
   padding: 32px;
+  max-width: 1600px;
 }
 
 main > section img {
