@@ -103,7 +103,6 @@ aside .profile-img img {
 
 aside input {
   all: unset;
-  cursor: text;
 }
 
 
@@ -154,6 +153,7 @@ main > section img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+
 }
 
 @media screen and (max-width: 767px) {

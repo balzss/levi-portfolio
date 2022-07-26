@@ -36,63 +36,13 @@
       </li>
       <li>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M3.75 0A1.75 1.75 0 002 1.75v12.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 14.25V1.75A1.75 1.75 0 0012.25 0h-8.5zM3.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v12.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25V1.75zM8 13a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-        <input onClick="this.setSelectionRange(0, this.value.length)" value="+36 30 921 8543" readonly/>
+        +36 30 921 8543
       </li>
     </ul>
   </aside>
 
   <main id="gallery">
-    <section>
-      <a
-        href="kepek/classic_modern/render1.jpg"
-        data-pswp-width="1500"
-        data-pswp-height="1080"
-        target="_blank"
-      >
-        <img src="kepek/classic_modern/render1.jpg" alt="">
-      </a>
-    </section>
-    <section>
-      <a
-        href="kepek/csigalepcsos/render1.jpg"
-        data-pswp-width="1500"
-        data-pswp-height="1080"
-        target="_blank"
-      >
-        <img src="kepek/csigalepcsos/render1.jpg" alt="">
-      </a>
-    </section>
-    <section>
-      <a
-        href="kepek/furdo/render1.jpg"
-        data-pswp-width="1500"
-        data-pswp-height="1080"
-        target="_blank"
-      >
-        <img src="kepek/furdo/render1.jpg" alt="">
-      </a>
-    </section>
-    <section>
-      <a
-        href="kepek/galerias_lakas/render1.jpg"
-        data-pswp-width="1500"
-        data-pswp-height="1080"
-        target="_blank"
-      >
-        <img src="kepek/galerias_lakas/render1.jpg" alt="">
-      </a>
-    </section>
-    <section>
-      <a
-        href="kepek/halo_alaprajz/render1.jpg"
-        data-pswp-width="1500"
-        data-pswp-height="1080"
-        target="_blank"
-      >
-        <img src="kepek/halo_alaprajz/render1.jpg" alt="">
-      </a>
-    </section>
-    <section>
+    <section id="japan_foldszintes">
       <a
         href="kepek/japan_foldszintes/render1.jpg"
         data-pswp-width="1500"
@@ -102,7 +52,47 @@
         <img src="kepek/japan_foldszintes/render1.jpg" alt="">
       </a>
     </section>
-    <section>
+    <section id="furdo">
+      <a
+        href="kepek/furdo/render1.jpg"
+        data-pswp-width="1500"
+        data-pswp-height="1080"
+        target="_blank"
+      >
+        <img src="kepek/furdo/render1.jpg" alt="">
+      </a>
+    </section>
+    <section id="halo_alaprajz">
+      <a
+        href="kepek/halo_alaprajz/render1.jpg"
+        data-pswp-width="1500"
+        data-pswp-height="1080"
+        target="_blank"
+      >
+        <img src="kepek/halo_alaprajz/render1.jpg" alt="">
+      </a>
+    </section>
+    <section id="csigalepcsos">
+      <a
+        href="kepek/csigalepcsos/render1.jpg"
+        data-pswp-width="1500"
+        data-pswp-height="1080"
+        target="_blank"
+      >
+        <img src="kepek/csigalepcsos/render1.jpg" alt="">
+      </a>
+    </section>
+    <section id="galerias_lakas">
+      <a
+        href="kepek/galerias_lakas/render1.jpg"
+        data-pswp-width="1500"
+        data-pswp-height="1080"
+        target="_blank"
+      >
+        <img src="kepek/galerias_lakas/render1.jpg" alt="">
+      </a>
+    </section>
+    <section id="sarga_budai">
       <a
         href="kepek/sarga_budai/render1.jpg"
         data-pswp-width="1500"
@@ -112,16 +102,86 @@
         <img src="kepek/sarga_budai/render1.jpg" alt="">
       </a>
     </section>
+    <section id="classic_modern">
+      <a
+        href="kepek/classic_modern/render1.png"
+        data-pswp-width="1938"
+        data-pswp-height="1395"
+        target="_blank"
+      >
+        <img src="kepek/classic_modern/render1.jpg" alt="">
+      </a>
+    </section>
   </main>
 
   <script type="module">
     import PhotoSwipeLightbox from './photoswipe/dist/photoswipe-lightbox.esm.js';
-    const lightbox = new PhotoSwipeLightbox({
-      gallery: '#gallery',
-      children: 'a',
-      pswpModule: () => import('./photoswipe/dist/photoswipe.esm.js')
+
+    const galleries = [
+      {
+        name: 'classic_modern',
+        len: 7,
+        width: 1938,
+        height: 1395,
+      },
+      {
+        name: 'csigalepcsos',
+        len: 7,
+        width: 1931,
+        height: 1346,
+      },
+      {
+        name: 'furdo',
+        len: 4,
+        width: 1400,
+        height: 1080,
+      },
+      {
+        name: 'galerias_lakas',
+        len: 3,
+        width: 1700,
+        height: 1193,
+      },
+      {
+        name: 'halo_alaprajz',
+        len: 5,
+        width: 1400,
+        height: 1080,
+      },
+      {
+        name: 'japan_foldszintes',
+        len: 7,
+        width: 1933,
+        height: 1305,
+      },
+      {
+        name: 'sarga_budai',
+        len: 6,
+        width: 1933,
+        height: 1305,
+      }
+    ];
+
+    galleries.forEach((g) => {
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: `#${g.name}`,
+        children: 'a',
+        loop: false,
+        pswpModule: () => import('./photoswipe/dist/photoswipe.esm.js')
+      });
+      lightbox.addFilter('numItems', (numItems) => {
+        return g.len;
+      });
+      lightbox.addFilter('itemData', (itemData, index) => {
+        if (index === 0) return itemData;
+        return {
+          src: `kepek/${g.name}/render${index + 1}.png`,
+          width: g.width,
+          height: g.height
+        };
+      });
+      lightbox.init();
     });
-    lightbox.init();
   </script>
 </body>
 </html>
