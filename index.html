@@ -42,74 +42,74 @@
   </aside>
 
   <main id="gallery">
-    <section id="japan_foldszintes">
+    <section id="japan_lakas">
       <a
-        href="kepek/japan_foldszintes/render1.jpg"
-        data-pswp-width="1500"
-        data-pswp-height="1080"
+        href="kepek/japan_lakas/render1.png"
+        data-pswp-width="1933"
+        data-pswp-height="1305"
         target="_blank"
       >
-        <img src="kepek/japan_foldszintes/render1.jpg" alt="">
+        <img src="kepek/japan_lakas/render1.png" alt="">
       </a>
     </section>
     <section id="furdo">
       <a
-        href="kepek/furdo/render1.jpg"
-        data-pswp-width="1500"
+        href="kepek/furdo/render1.png"
+        data-pswp-width="1400"
         data-pswp-height="1080"
         target="_blank"
       >
-        <img src="kepek/furdo/render1.jpg" alt="">
+        <img src="kepek/furdo/render1.png" alt="">
       </a>
     </section>
     <section id="halo_alaprajz">
       <a
-        href="kepek/halo_alaprajz/render1.jpg"
-        data-pswp-width="1500"
+        href="kepek/halo_alaprajz/render1.png"
+        data-pswp-width="1400"
         data-pswp-height="1080"
         target="_blank"
       >
-        <img src="kepek/halo_alaprajz/render1.jpg" alt="">
+        <img src="kepek/halo_alaprajz/render1.png" alt="">
       </a>
     </section>
     <section id="csigalepcsos">
       <a
-        href="kepek/csigalepcsos/render1.jpg"
-        data-pswp-width="1500"
-        data-pswp-height="1080"
+        href="kepek/csigalepcsos/render1.png"
+        data-pswp-width="1931"
+        data-pswp-height="1346"
         target="_blank"
       >
-        <img src="kepek/csigalepcsos/render1.jpg" alt="">
+        <img src="kepek/csigalepcsos/render1.png" alt="">
       </a>
     </section>
-    <section id="galerias_lakas">
+    <section id="galerias">
       <a
-        href="kepek/galerias_lakas/render1.jpg"
-        data-pswp-width="1500"
-        data-pswp-height="1080"
+        href="kepek/galerias/render1.png"
+        data-pswp-width="1700"
+        data-pswp-height="1193"
         target="_blank"
       >
-        <img src="kepek/galerias_lakas/render1.jpg" alt="">
+        <img src="kepek/galerias/render1.png" alt="">
       </a>
     </section>
-    <section id="sarga_budai">
+    <section id="sarga_lakas">
       <a
-        href="kepek/sarga_budai/render1.jpg"
-        data-pswp-width="1500"
-        data-pswp-height="1080"
+        href="kepek/sarga_lakas/render1.png"
+        data-pswp-width="1933"
+        data-pswp-height="1305"
         target="_blank"
       >
-        <img src="kepek/sarga_budai/render1.jpg" alt="">
+        <img src="kepek/sarga_lakas/render1.png" alt="">
       </a>
     </section>
-    <section id="classic_modern">
+    <section id="classic_modern_lakas">
       <a
-        href="kepek/classic_modern/render1.png"
+        href="kepek/classic_modern_lakas/render1.png"
         data-pswp-width="1938"
         data-pswp-height="1395"
         target="_blank"
       >
-        <img src="kepek/classic_modern/render1.jpg" alt="">
+        <img src="kepek/classic_modern_lakas/render1.png" alt="">
       </a>
     </section>
   </main>
@@ -119,14 +119,14 @@
 
     const galleries = [
       {
-        name: 'classic_modern',
+        name: 'classic_modern_lakas',
         len: 7,
         width: 1938,
         height: 1395,
       },
       {
         name: 'csigalepcsos',
-        len: 7,
+        len: 6,
         width: 1931,
         height: 1346,
       },
@@ -137,7 +137,7 @@
         height: 1080,
       },
       {
-        name: 'galerias_lakas',
+        name: 'galerias',
         len: 3,
         width: 1700,
         height: 1193,
@@ -147,15 +147,21 @@
         len: 5,
         width: 1400,
         height: 1080,
+        irregulars: {
+          4: {
+            width: 1600,
+            height: 1080,
+          }
+        }
       },
       {
-        name: 'japan_foldszintes',
+        name: 'japan_lakas',
         len: 7,
         width: 1933,
         height: 1305,
       },
       {
-        name: 'sarga_budai',
+        name: 'sarga_lakas',
         len: 6,
         width: 1933,
         height: 1305,
@@ -174,6 +180,13 @@
       });
       lightbox.addFilter('itemData', (itemData, index) => {
         if (index === 0) return itemData;
+        if (Object.keys(g.irregulars)?.includes(index.toString())) {
+          return {
+            src: `kepek/${g.name}/render${index + 1}.png`,
+            width: g.irregulars[index.toString()].width,
+            height: g.irregulars[index.toString()].height,
+          };
+        }
         return {
           src: `kepek/${g.name}/render${index + 1}.png`,
           width: g.width,
