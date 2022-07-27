@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Sáros Levente | 3D látványtervezés</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="icon" type="image/jpg" href="favicon.png" />
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="photoswipe/dist/photoswipe.css">
 </head>
 <body>
   <header>
     <div class="img-container">
-      <img src="kepek/alaprajz.png" alt="">
+      <img src="kepek/alaprajz.png" alt="alaprajz">
     </div>
   </header>
 
@@ -44,72 +44,72 @@
   <main id="gallery">
     <section id="japan_lakas">
       <a
-        href="kepek/japan_lakas/render1.png"
+        href="kepek/japan_lakas/render1.jpg"
         data-pswp-width="1933"
         data-pswp-height="1305"
         target="_blank"
       >
-        <img src="kepek/japan_lakas/render1.png" alt="">
+        <img src="kepek/japan_lakas/render1.jpg" alt="">
       </a>
     </section>
     <section id="furdo">
       <a
-        href="kepek/furdo/render1.png"
+        href="kepek/furdo/render1.jpg"
         data-pswp-width="1400"
         data-pswp-height="1080"
         target="_blank"
       >
-        <img src="kepek/furdo/render1.png" alt="">
+        <img src="kepek/furdo/render1.jpg" alt="">
       </a>
     </section>
     <section id="halo_alaprajz">
       <a
-        href="kepek/halo_alaprajz/render1.png"
+        href="kepek/halo_alaprajz/render1.jpg"
         data-pswp-width="1400"
         data-pswp-height="1080"
         target="_blank"
       >
-        <img src="kepek/halo_alaprajz/render1.png" alt="">
+        <img src="kepek/halo_alaprajz/render1.jpg" alt="">
       </a>
     </section>
     <section id="csigalepcsos">
       <a
-        href="kepek/csigalepcsos/render1.png"
+        href="kepek/csigalepcsos/render1.jpg"
         data-pswp-width="1931"
         data-pswp-height="1346"
         target="_blank"
       >
-        <img src="kepek/csigalepcsos/render1.png" alt="">
+        <img src="kepek/csigalepcsos/render1.jpg" alt="">
       </a>
     </section>
     <section id="galerias">
       <a
-        href="kepek/galerias/render1.png"
+        href="kepek/galerias/render1.jpg"
         data-pswp-width="1700"
         data-pswp-height="1193"
         target="_blank"
       >
-        <img src="kepek/galerias/render1.png" alt="">
+        <img src="kepek/galerias/render1.jpg" alt="">
       </a>
     </section>
     <section id="sarga_lakas">
       <a
-        href="kepek/sarga_lakas/render1.png"
+        href="kepek/sarga_lakas/render1.jpg"
         data-pswp-width="1933"
         data-pswp-height="1305"
         target="_blank"
       >
-        <img src="kepek/sarga_lakas/render1.png" alt="">
+        <img src="kepek/sarga_lakas/render1.jpg" alt="">
       </a>
     </section>
     <section id="classic_modern_lakas">
       <a
-        href="kepek/classic_modern_lakas/render1.png"
+        href="kepek/classic_modern_lakas/render1.jpg"
         data-pswp-width="1938"
         data-pswp-height="1395"
         target="_blank"
       >
-        <img src="kepek/classic_modern_lakas/render1.png" alt="">
+        <img src="kepek/classic_modern_lakas/render1.jpg" alt="">
       </a>
     </section>
   </main>
@@ -180,15 +180,15 @@
       });
       lightbox.addFilter('itemData', (itemData, index) => {
         if (index === 0) return itemData;
-        if (Object.keys(g.irregulars)?.includes(index.toString())) {
+        if (g.irregulars && Object.keys(g.irregulars).includes(index.toString())) {
           return {
-            src: `kepek/${g.name}/render${index + 1}.png`,
+            src: `kepek/${g.name}/render${index + 1}.jpg`,
             width: g.irregulars[index.toString()].width,
             height: g.irregulars[index.toString()].height,
           };
         }
         return {
-          src: `kepek/${g.name}/render${index + 1}.png`,
+          src: `kepek/${g.name}/render${index + 1}.jpg`,
           width: g.width,
           height: g.height
         };
