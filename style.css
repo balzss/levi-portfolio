@@ -210,6 +210,11 @@ main .img-overlay svg {
   transform: scale(0.85);
 }
 
+.pswp__counter {
+  font-weight: 400;
+  font-family: 'Lato Regular', sans-serif;
+}
+
 @media screen and (max-width: 767px) {
   header {
     background-image: none;
