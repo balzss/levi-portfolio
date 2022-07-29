@@ -1,11 +1,13 @@
 @font-face {
-  font-family: 'Lato Light';
-  src:  url('fonts/Lato-Regular.ttf') format('truetype');
+  font-family: 'Lato Regular';
+  src: url('fonts/LatoLatin-Regular.woff2') format('woff2'),
+       url('fonts/LatoLatin-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Lato Thin';
-  src:  url('fonts/Lato-Thin.ttf') format('truetype');
+  src: url('fonts/LatoLatin-Thin.woff2') format('woff2'),
+       url('fonts/LatoLatin-Thin.woff') format('woff');
 }
 
 html {
@@ -128,7 +130,7 @@ aside svg {
 aside h1 {
   font-size: 20px;
   font-weight: 400;
-  font-family: 'Lato Light', sans-serif;
+  font-family: 'Lato Regular', sans-serif;
   text-transform: uppercase;
 }
 
