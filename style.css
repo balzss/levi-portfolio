@@ -10,6 +10,22 @@
        url('fonts/LatoLatin-Thin.woff') format('woff');
 }
 
+:root {
+  --bg-color: #313131;
+  --fg-color: #f0f0f0;
+
+  --header-bg-color: #a19f9a;
+  --header-max-height: 20rem;
+  --header-img-max-width: 900px;
+
+  --spacing-large: 2rem;
+  --spacing-small: 1rem;
+
+  --contact-bg-color: #444;
+  --contact-width: 16rem;
+  --contact-height: 32rem;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -28,8 +44,8 @@ a:hover {
 }
 
 body {
-  background-color: #313131;
-  color: #f0f0f0;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
   margin: 0;
   font-weight: 100;
   font-size: 16px;
@@ -58,15 +74,15 @@ header {
   background-repeat: no-repeat;
   background-size: contain;
   display: flex;
-  padding: 32px;
-  background-color: #a19f9a;
-  max-height: 320px;
+  padding: var(--spacing-large);
+  background-color: var(--header-bg-color);
+  max-height: var(--header-max-height);
 }
 
 header img {
-  width: calc(100% - 240px);
+  width: calc(100% - var(--contact-width) + (var(--spacing-large) / 2));
   height: 100%;
-  max-width: 900px;
+  max-width: var(--header-img-max-width);
 }
 
 header .img-container {
@@ -78,17 +94,17 @@ header .img-container {
 
 aside {
   border-radius: 4px;
-  background-color: #444;
+  background-color: var(--contact-bg-color);
   position: absolute;
-  width: 260px;
-  left: 32px;
-  top: 72px;
-  height: 500px;
-  padding: 32px;
+  width: var(--contact-width);
+  left: var(--spacing-large);
+  top: calc(var(--spacing-large) * 2.5);
+  height: var(--contact-height);
+  padding: var(--spacing-large);
 }
 
 aside .profile {
-  margin: 32px 0;
+  margin: var(--spacing-large) 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,7 +113,7 @@ aside .profile {
 aside .profile-img {
   width: 120px;
   height: auto;
-  margin-bottom: 32px;
+  margin-bottom: var(--spacing-large);
 }
 
 aside .profile-img img {
@@ -145,10 +161,10 @@ aside ul li {
 
 main {
   display: grid;
-  gap: 32px;
+  gap: var(--spacing-large);
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  margin-left: calc(260px + 32px);
-  padding: 32px;
+  margin-left: calc(var(--contact-width) + var(--spacing-large));
+  padding: var(--spacing-large);
   max-width: 1600px;
 }
 
@@ -156,13 +172,12 @@ main > section img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
 }
 
 @media screen and (max-width: 767px) {
   header {
     background-image: none;
-    padding: 32px 16px;
+    padding: 32px var(--spacing-small);
     padding-bottom: 64px;
     height: auto;
   }
@@ -181,22 +196,21 @@ main > section img {
     height: auto;
     width: 100%;
     background-color: transparent;
-    padding: 16px;
+    padding: var(--spacing-small);
   }
 
   aside .profile {
-    margin: 16px 0;
+    margin: var(--spacing-small) 0;
     padding: 0;
   }
 
   aside .profile-img {
-    margin-bottom: 16px;
+    margin-bottom: var(--spacing-small);
   }
 
   main {
     margin: 0;
-    padding: 16px;
-    gap: 16px;
+    padding: var(--spacing-small);
+    gap: var(--spacing-small);
   }
 }
-
