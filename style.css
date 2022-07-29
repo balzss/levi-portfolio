@@ -48,6 +48,7 @@ section {
 section a {
   aspect-ratio: 4 / 3;
   width: 100%;
+  display: flex;
 }
 
 header {
