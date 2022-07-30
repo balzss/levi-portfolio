@@ -199,7 +199,8 @@ main .img-overlay {
   transition: opacity 0.15s ease;
 }
 
-main img:hover + .img-overlay {
+main img:hover + .img-overlay,
+main .img-overlay:hover {
   opacity: 0.8;
 }
 
