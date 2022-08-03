@@ -1,0 +1,21 @@
+{
+  "name": "saroslevente.hu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balzss/saroslevente.hu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "saroslevente.hu",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1"
+  }
+}

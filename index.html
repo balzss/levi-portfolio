@@ -1,259 +1,143 @@
+---
+title: Sáros Levente | 3D látványtervezés
+description: Magas minőségű látványtervek és 3D alaprajzok ingatlan értékesítéshez, gyors határidővel.
+profil:
+  name: Sáros Levente
+  bio: 3D látványtervező
+  location: Budapest
+  email: leventesaros@gmail.com
+  phone: +36 30 921 8543
+projects:
+  - name: japan_lakas
+    len: 7
+    width: 1933
+    height: 1305
+  - name: nagyobbhaz
+    len: 4
+    width: 1650
+    height: 1080
+  - name: furdo
+    len: 4
+    width: 1400
+    height: 1080
+  - name: halo_alaprajz
+    len: 5
+    width: 1400
+    height: 1080
+    irregulars:
+      4:
+        width: 1600
+        height: 1080
+  - name: csigalepcsos
+    len: 6
+    width: 1931
+    height: 1346
+  - name: kishaz
+    len: 3
+    width: 1650
+    height: 1080
+  - name: galerias
+    len: 3
+    width: 1700
+    height: 1193
+  - name: sarga_lakas
+    len: 6
+    width: 1933
+    height: 1305
+  - name: classic_modern_lakas
+    len: 7
+    width: 1938
+    height: 1395
+---
 <!DOCTYPE html>
 <html lang="hu">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <meta name="author" content="Sáros Levente">
-  <meta name="description" content="Magas minőségű látványtervek és 3D alaprajzok ingatlan értékesítéshez, gyors határidővel.">
-  <title>Sáros Levente | 3D látványtervezés</title>
-  <link rel="icon" type="image/jpg" href="favicon.png" />
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="photoswipe/dist/photoswipe.css">
+  <meta name="author" content="{{ profil.name }}">
+  <meta name="description" content="{{ description }}">
+  <title>{{ title }}</title>
+  <link rel="icon" type="image/jpg" href="static/favicon.png" />
+  <link rel="stylesheet" href="static/style.css">
+  <link rel="stylesheet" href="static/photoswipe/dist/photoswipe.css">
 </head>
 <body>
   <header>
     <div class="img-container">
-      <img src="kepek/alaprajz.png" alt="alaprajz">
+      <img src="static/alaprajz.png" alt="alaprajz">
     </div>
   </header>
 
   <aside>
     <div class="profile">
       <div class="profile-img">
-        <img src="kepek/profilkep.png" alt="profil">
+        <img src="static/profilkep.png" alt="profil">
       </div>
-      <h1>Sáros Levente</h1>
-      <h2>3D látványtervező</h2>
+      <h1>{{ profil.name }}</h1>
+      <h2>{{ profil.bio }}</h2>
       <div class="location">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M11.536 3.464a5 5 0 010 7.072L8 14.07l-3.536-3.535a5 5 0 117.072-7.072v.001zm1.06 8.132a6.5 6.5 0 10-9.192 0l3.535 3.536a1.5 1.5 0 002.122 0l3.535-3.536zM8 9a2 2 0 100-4 2 2 0 000 4z"></path></svg>
-        Budapest
+        {{ profil.location }}
       </div>
     </div>
     <ul class="contact-info">
       <li>
         <a href="mailto:leventesaros@gmail.com">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.75 2A1.75 1.75 0 000 3.75v.736a.75.75 0 000 .027v7.737C0 13.216.784 14 1.75 14h12.5A1.75 1.75 0 0016 12.25v-8.5A1.75 1.75 0 0014.25 2H1.75zM14.5 4.07v-.32a.25.25 0 00-.25-.25H1.75a.25.25 0 00-.25.25v.32L8 7.88l6.5-3.81zm-13 1.74v6.441c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V5.809L8.38 9.397a.75.75 0 01-.76 0L1.5 5.809z"></path></svg>
-          leventesaros@gmail.com
+          {{ profil.email }}
         </a>
       </li>
       <li>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M3.75 0A1.75 1.75 0 002 1.75v12.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 14.25V1.75A1.75 1.75 0 0012.25 0h-8.5zM3.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v12.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25V1.75zM8 13a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-        +36 30 921 8543
+        {{ profil.phone }}
       </li>
     </ul>
   </aside>
 
   <main id="gallery">
-    <section id="japan_lakas">
+
+  {% for project in projects %}
+  <section id="{{project.name}}">
       <a
-        href="kepek/japan_lakas/render1.jpg"
-        data-pswp-width="1933"
-        data-pswp-height="1305"
+        href="projects/{{project.name}}/render1.jpg"
+        data-pswp-width="{{project.width}}"
+        data-pswp-height="{{project.height}}"
         data-cropped="true"
         target="_blank"
       >
-        <img src="kepek/japan_lakas/thumbnail.jpg" alt="">
+        <img src="projects/{{project.name}}/thumbnail.jpg" alt="">
         <div class="img-overlay">
-          #1
+          #{{loop.index}}
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M7.122.392a1.75 1.75 0 011.756 0l5.003 2.902c.83.481.83 1.68 0 2.162L8.878 8.358a1.75 1.75 0 01-1.756 0L2.119 5.456a1.25 1.25 0 010-2.162L7.122.392zM8.125 1.69a.25.25 0 00-.25 0l-4.63 2.685 4.63 2.685a.25.25 0 00.25 0l4.63-2.685-4.63-2.685zM1.601 7.789a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0L1.874 8.814A.75.75 0 011.6 7.789zm0 3.5a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0l-5.248-3.044a.75.75 0 01-.273-1.025z"></path></svg>
-          7
+          {{project.len}}
         </div>
       </a>
     </section>
-    <section id="nagyobbhaz">
-      <a
-        href="kepek/nagyobbhaz/render1.jpg"
-        data-pswp-width="1650"
-        data-pswp-height="1080"
-        data-cropped="true"
-        target="_blank"
-      >
-        <img src="kepek/nagyobbhaz/thumbnail.jpg" alt="">
-        <div class="img-overlay">
-          #2
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M7.122.392a1.75 1.75 0 011.756 0l5.003 2.902c.83.481.83 1.68 0 2.162L8.878 8.358a1.75 1.75 0 01-1.756 0L2.119 5.456a1.25 1.25 0 010-2.162L7.122.392zM8.125 1.69a.25.25 0 00-.25 0l-4.63 2.685 4.63 2.685a.25.25 0 00.25 0l4.63-2.685-4.63-2.685zM1.601 7.789a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0L1.874 8.814A.75.75 0 011.6 7.789zm0 3.5a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0l-5.248-3.044a.75.75 0 01-.273-1.025z"></path></svg>
-          4
-        </div>
-      </a>
-    </section>
-    <section id="furdo">
-      <a
-        href="kepek/furdo/render1.jpg"
-        data-pswp-width="1400"
-        data-pswp-height="1080"
-        data-cropped="true"
-        target="_blank"
-      >
-        <img src="kepek/furdo/thumbnail.jpg" alt="">
-        <div class="img-overlay">
-          #3
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M7.122.392a1.75 1.75 0 011.756 0l5.003 2.902c.83.481.83 1.68 0 2.162L8.878 8.358a1.75 1.75 0 01-1.756 0L2.119 5.456a1.25 1.25 0 010-2.162L7.122.392zM8.125 1.69a.25.25 0 00-.25 0l-4.63 2.685 4.63 2.685a.25.25 0 00.25 0l4.63-2.685-4.63-2.685zM1.601 7.789a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0L1.874 8.814A.75.75 0 011.6 7.789zm0 3.5a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0l-5.248-3.044a.75.75 0 01-.273-1.025z"></path></svg>
-          4
-        </div>
-      </a>
-    </section>
-    <section id="halo_alaprajz">
-      <a
-        href="kepek/halo_alaprajz/render1.jpg"
-        data-pswp-width="1400"
-        data-pswp-height="1080"
-        data-cropped="true"
-        target="_blank"
-      >
-        <img src="kepek/halo_alaprajz/thumbnail.jpg" alt="">
-        <div class="img-overlay">
-          #4
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M7.122.392a1.75 1.75 0 011.756 0l5.003 2.902c.83.481.83 1.68 0 2.162L8.878 8.358a1.75 1.75 0 01-1.756 0L2.119 5.456a1.25 1.25 0 010-2.162L7.122.392zM8.125 1.69a.25.25 0 00-.25 0l-4.63 2.685 4.63 2.685a.25.25 0 00.25 0l4.63-2.685-4.63-2.685zM1.601 7.789a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0L1.874 8.814A.75.75 0 011.6 7.789zm0 3.5a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0l-5.248-3.044a.75.75 0 01-.273-1.025z"></path></svg>
-          5
-        </div>
-      </a>
-    </section>
-    <section id="csigalepcsos">
-      <a
-        href="kepek/csigalepcsos/render1.jpg"
-        data-pswp-width="1650"
-        data-pswp-height="1080"
-        data-cropped="true"
-        target="_blank"
-      >
-        <img src="kepek/csigalepcsos/thumbnail.jpg" alt="">
-        <div class="img-overlay">
-          #5
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M7.122.392a1.75 1.75 0 011.756 0l5.003 2.902c.83.481.83 1.68 0 2.162L8.878 8.358a1.75 1.75 0 01-1.756 0L2.119 5.456a1.25 1.25 0 010-2.162L7.122.392zM8.125 1.69a.25.25 0 00-.25 0l-4.63 2.685 4.63 2.685a.25.25 0 00.25 0l4.63-2.685-4.63-2.685zM1.601 7.789a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0L1.874 8.814A.75.75 0 011.6 7.789zm0 3.5a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0l-5.248-3.044a.75.75 0 01-.273-1.025z"></path></svg>
-          6
-        </div>
-      </a>
-    </section>
-    <section id="kishaz">
-      <a
-        href="kepek/kishaz/render1.jpg"
-        data-pswp-width="1650"
-        data-pswp-height="1080"
-        data-cropped="true"
-        target="_blank"
-      >
-        <img src="kepek/kishaz/thumbnail.jpg" alt="">
-        <div class="img-overlay">
-          #6
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M7.122.392a1.75 1.75 0 011.756 0l5.003 2.902c.83.481.83 1.68 0 2.162L8.878 8.358a1.75 1.75 0 01-1.756 0L2.119 5.456a1.25 1.25 0 010-2.162L7.122.392zM8.125 1.69a.25.25 0 00-.25 0l-4.63 2.685 4.63 2.685a.25.25 0 00.25 0l4.63-2.685-4.63-2.685zM1.601 7.789a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0L1.874 8.814A.75.75 0 011.6 7.789zm0 3.5a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0l-5.248-3.044a.75.75 0 01-.273-1.025z"></path></svg>
-          3
-        </div>
-      </a>
-    </section>
-    <section id="galerias">
-      <a
-        href="kepek/galerias/render1.jpg"
-        data-pswp-width="1700"
-        data-pswp-height="1193"
-        data-cropped="true"
-        target="_blank"
-      >
-        <img src="kepek/galerias/thumbnail.jpg" alt="">
-        <div class="img-overlay">
-          #7
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M7.122.392a1.75 1.75 0 011.756 0l5.003 2.902c.83.481.83 1.68 0 2.162L8.878 8.358a1.75 1.75 0 01-1.756 0L2.119 5.456a1.25 1.25 0 010-2.162L7.122.392zM8.125 1.69a.25.25 0 00-.25 0l-4.63 2.685 4.63 2.685a.25.25 0 00.25 0l4.63-2.685-4.63-2.685zM1.601 7.789a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0L1.874 8.814A.75.75 0 011.6 7.789zm0 3.5a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0l-5.248-3.044a.75.75 0 01-.273-1.025z"></path></svg>
-          3
-        </div>
-      </a>
-    </section>
-    <section id="sarga_lakas">
-      <a
-        href="kepek/sarga_lakas/render1.jpg"
-        data-pswp-width="1933"
-        data-pswp-height="1305"
-        data-cropped="true"
-        target="_blank"
-      >
-        <img src="kepek/sarga_lakas/thumbnail.jpg" alt="">
-        <div class="img-overlay">
-          #8
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M7.122.392a1.75 1.75 0 011.756 0l5.003 2.902c.83.481.83 1.68 0 2.162L8.878 8.358a1.75 1.75 0 01-1.756 0L2.119 5.456a1.25 1.25 0 010-2.162L7.122.392zM8.125 1.69a.25.25 0 00-.25 0l-4.63 2.685 4.63 2.685a.25.25 0 00.25 0l4.63-2.685-4.63-2.685zM1.601 7.789a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0L1.874 8.814A.75.75 0 011.6 7.789zm0 3.5a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0l-5.248-3.044a.75.75 0 01-.273-1.025z"></path></svg>
-          6
-        </div>
-      </a>
-    </section>
-    <section id="classic_modern_lakas">
-      <a
-        href="kepek/classic_modern_lakas/render1.jpg"
-        data-pswp-width="1938"
-        data-pswp-height="1395"
-        data-cropped="true"
-        target="_blank"
-      >
-        <img src="kepek/classic_modern_lakas/thumbnail.jpg" alt="">
-        <div class="img-overlay">
-          #9
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M7.122.392a1.75 1.75 0 011.756 0l5.003 2.902c.83.481.83 1.68 0 2.162L8.878 8.358a1.75 1.75 0 01-1.756 0L2.119 5.456a1.25 1.25 0 010-2.162L7.122.392zM8.125 1.69a.25.25 0 00-.25 0l-4.63 2.685 4.63 2.685a.25.25 0 00.25 0l4.63-2.685-4.63-2.685zM1.601 7.789a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0L1.874 8.814A.75.75 0 011.6 7.789zm0 3.5a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0l-5.248-3.044a.75.75 0 01-.273-1.025z"></path></svg>
-          7
-        </div>
-      </a>
-    </section>
+    {% endfor %}
   </main>
 
   <script type="module">
-    import PhotoSwipeLightbox from './photoswipe/dist/photoswipe-lightbox.esm.js';
+    import PhotoSwipeLightbox from './static/photoswipe/dist/photoswipe-lightbox.esm.js';
 
     const galleries = [
+    {% for project in projects %}
       {
-        name: 'japan_lakas',
-        len: 7,
-        width: 1933,
-        height: 1305,
-      },
-      {
-        name: 'csigalepcsos',
-        len: 6,
-        width: 1931,
-        height: 1346,
-      },
-      {
-        name: 'furdo',
-        len: 4,
-        width: 1400,
-        height: 1080,
-      },
-      {
-        name: 'galerias',
-        len: 3,
-        width: 1700,
-        height: 1193,
-      },
-      {
-        name: 'halo_alaprajz',
-        len: 5,
-        width: 1400,
-        height: 1080,
+        name: '{{project.name}}',
+        len: {{project.len}},
+        width: {{project.width}},
+        height: {{project.height}},
+        {% if project.irregulars %}
         irregulars: {
-          4: {
-            width: 1600,
-            height: 1080,
+          {% for key, value in project.irregulars %}
+          {{key}}: {
+            width: {{value.width}},
+            height: {{value.height}},
           }
+          {% endfor %}
         }
+        {% endif %}
       },
-      {
-        name: 'sarga_lakas',
-        len: 6,
-        width: 1933,
-        height: 1305,
-      },
-      {
-        name: 'classic_modern_lakas',
-        len: 7,
-        width: 1938,
-        height: 1395,
-      },
-      {
-        name: 'kishaz',
-        len: 3,
-        width: 1650,
-        height: 1080,
-      },
-      {
-        name: 'nagyobbhaz',
-        len: 4,
-        width: 1650,
-        height: 1080,
-      },
+    {% endfor %}
     ];
 
     galleries.forEach((g) => {
@@ -261,7 +145,7 @@
         gallery: `#${g.name}`,
         children: 'a',
         loop: false,
-        pswpModule: () => import('./photoswipe/dist/photoswipe.esm.js')
+        pswpModule: () => import('./static/photoswipe/dist/photoswipe.esm.js')
       });
       lightbox.addFilter('numItems', (numItems) => {
         return g.len;
@@ -270,13 +154,13 @@
         if (index === 0) return itemData;
         if (g.irregulars && Object.keys(g.irregulars).includes(index.toString())) {
           return {
-            src: `kepek/${g.name}/render${index + 1}.jpg`,
+            src: `projects/${g.name}/render${index + 1}.jpg`,
             width: g.irregulars[index.toString()].width,
             height: g.irregulars[index.toString()].height,
           };
         }
         return {
-          src: `kepek/${g.name}/render${index + 1}.jpg`,
+          src: `projects/${g.name}/render${index + 1}.jpg`,
           width: g.width,
           height: g.height
         };

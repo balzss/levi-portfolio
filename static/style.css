@@ -70,7 +70,7 @@ section a {
 }
 
 header {
-  background-image: linear-gradient(to right, rgba(0,0,0,0) 0%, #a19f9a 35%), url("kepek/header.png");
+  background-image: linear-gradient(to right, rgba(0,0,0,0) 0%, #a19f9a 35%), url("header.png");
   background-repeat: no-repeat;
   background-size: contain;
   display: flex;
