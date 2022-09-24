@@ -1,10 +1,12 @@
 @font-face {
+  font-display: swap;
   font-family: 'Lato Regular';
   src: url('fonts/LatoLatin-Regular.woff2') format('woff2'),
        url('fonts/LatoLatin-Regular.woff') format('woff');
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Lato Thin';
   src: url('fonts/LatoLatin-Thin.woff2') format('woff2'),
        url('fonts/LatoLatin-Thin.woff') format('woff');
